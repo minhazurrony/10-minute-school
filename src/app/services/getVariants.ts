@@ -1,4 +1,4 @@
-import { VARIANTS_ENDPOINT } from "../constants/api-routes";
+import { VARIANTS_ENDPOINT } from "@/constants/api-routes";
 
 export const getVariants = async () => {
   const data = await fetch(VARIANTS_ENDPOINT, {
