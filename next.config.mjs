@@ -1,5 +1,12 @@
 const nextConfig = {
-  /* config options here */
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.10minuteschool.com",
+      },
+    ],
+  },
 };
 
 export default nextConfig;
