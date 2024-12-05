@@ -1,5 +1,5 @@
-import { getLiveBatch, getVariants } from "@/services";
-import { Hero } from "@/components";
+import { getLiveBatch, getVariants } from "@/app/services";
+import { Hero } from "@/app/components";
 
 export default async function Home() {
   const liveBatchData = await getLiveBatch();

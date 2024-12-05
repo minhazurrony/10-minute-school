@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { HeroChecklist, CountdownTimer } from "@/components";
+import { HeroChecklist, CountdownTimer } from "@/app/components";
 
 type HeroProps = {
   liveBatchData: any;

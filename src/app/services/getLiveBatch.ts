@@ -1,4 +1,4 @@
-import { LIVE_BATCH_ENDPOINT } from "@/constants/api-routes";
+import { LIVE_BATCH_ENDPOINT } from "@/app/constants/api-routes";
 
 export const getLiveBatch = async () => {
   const data = await fetch(LIVE_BATCH_ENDPOINT, {
