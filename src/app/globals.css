@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .bg-timer {
+    background: linear-gradient(
+      158deg,
+      rgb(0, 0, 0) 10.11%,
+      rgba(27, 27, 27, 0.79) 39.39%,
+      rgb(35, 35, 35) 95.29%
+    );
+  }
+
+  .border-timer {
+    border: 3px solid rgb(74, 74, 74);
+  }
+}
