@@ -4,7 +4,7 @@ import React from "react";
 
 export const Header = () => {
   return (
-    <nav className="sticky top-0 z-10 flex min-h-16 items-center justify-between border-b">
+    <nav className="sticky top-0 z-10 flex min-h-16 items-center justify-between border-b bg-white">
       <div className="m-auto flex w-full max-w-[1440px] items-center justify-between px-4 py-3 md:px-7">
         <Link href={"/"}>
           <Image
