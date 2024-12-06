@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { HeroChecklist, CountdownTimer, CourseCard } from "@app/components";
+import { MakeCall } from "./make-call";
 
 type HeroProps = {
   liveBatchData: any;
@@ -26,6 +27,8 @@ export const Hero: React.FC<HeroProps> = ({ liveBatchData, variantsData }) => {
 
   const enrollmentNotice =
     variantsData?.data?.items[0]?.meta[1]?.values[0]?.text;
+
+  const courseChecklist = liveBatchData?.data?.checklist;
 
   return (
     <div
@@ -70,7 +73,15 @@ export const Hero: React.FC<HeroProps> = ({ liveBatchData, variantsData }) => {
         </div>
 
         <div className="absolute right-0 order-2 w-full bg-white md:absolute md:top-[50px] md:max-w-[330px] lg:max-w-[400px]">
-          <CourseCard media={media} variantData={variantsData} />
+          <CourseCard
+            media={media}
+            variantData={variantsData}
+            courseChecklist={courseChecklist}
+          />
+          <div className="mt-4 hidden justify-between text-center text-sm text-gray-400 md:flex md:flex-col lg:flex lg:flex-row">
+            <p>কোর্সটি সম্পর্কে বিস্তারিত জানতে</p>
+            <MakeCall />
+          </div>
         </div>
       </div>
     </div>

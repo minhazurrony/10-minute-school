@@ -1,17 +1,21 @@
 import React from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { CourseCarousel } from "@app/components";
+import { CourseCarousel, CourseChecklist, DiscountTag } from "@app/components";
 import { Button } from "@/components/ui/button";
 import { formatDate } from "@app/utils/format-date";
 
 export type CourseCardProps = {
   media: any[];
   variantData: any;
+  courseChecklist: any[];
+  showCarousel?: boolean;
 };
 
 export const CourseCard: React.FC<CourseCardProps> = ({
   media,
   variantData,
+  courseChecklist,
+  showCarousel = true,
 }) => {
   const variantInfo = variantData?.data?.items[0];
 
@@ -20,10 +24,11 @@ export const CourseCard: React.FC<CourseCardProps> = ({
   );
 
   return (
-    <Card>
+    <Card className="rounded-none">
       <CardHeader className="p-1">
-        <CourseCarousel media={media} />
+        {showCarousel && <CourseCarousel media={media} />}
       </CardHeader>
+
       <CardContent className="p-4">
         <div className="flex items-center gap-3">
           <h2 className="text-2xl font-semibold">
@@ -34,15 +39,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({
             ৳{variantInfo?.price}
           </h3>
 
-          <div className="relative ml-1 flex items-center rounded bg-orange-600 px-3 py-1 text-sm font-semibold text-white">
-            {/* Diamond Shape */}
-            <div className="absolute -left-[8px] h-5 w-5 rotate-45 bg-orange-600"></div>
-            {/* Bullet Point and Text */}
-            <div className="flex items-center">
-              <span className="absolute left-0">•</span>
-              <span className="z-10">1500 ৳ ছাড়</span>
-            </div>
-          </div>
+          <DiscountTag discountValue={variantInfo?.discount_value} />
         </div>
         <h3 className="text-xs font-normal text-gray-500 md:text-base">
           {variantInfo?.name}
@@ -55,6 +52,21 @@ export const CourseCard: React.FC<CourseCardProps> = ({
         <p className="text-base text-orange-500">
           {`${courseEndInfo[0]?.values[0]?.text} ${formatDate(courseEndInfo[0]?.values[0]?.end_at)}`}
         </p>
+
+        <div className="mt-8">
+          <h4 className="mb-4 text-xl font-semibold">এই কোর্সে যা থাকছে</h4>
+          <div className="flex flex-col gap-2">
+            {courseChecklist.map((course: any) => {
+              return (
+                <CourseChecklist
+                  key={course?.id}
+                  iconUrl={course?.icon}
+                  text={course?.text}
+                />
+              );
+            })}
+          </div>
+        </div>
       </CardContent>
     </Card>
   );
