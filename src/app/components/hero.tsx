@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { HeroChecklist, CountdownTimer, CourseCard } from "@app/components";
 import { MakeCall } from "./make-call";
+import { HERO_BG_IMAGE } from "@app/constants";
 
 type HeroProps = {
   liveBatchData: any;
@@ -15,8 +16,8 @@ type VariantsChecklist = {
 };
 
 export const Hero: React.FC<HeroProps> = ({ liveBatchData, variantsData }) => {
-  const backgroundUrl =
-    liveBatchData?.data?.sections[0]?.values[0]?.background?.image;
+  const backgroundUrl = HERO_BG_IMAGE;
+  // liveBatchData?.data?.sections[0]?.values[0]?.background?.image;
   const title = liveBatchData?.data?.title;
   const description = liveBatchData?.data?.description;
   const media = liveBatchData?.data?.media;
