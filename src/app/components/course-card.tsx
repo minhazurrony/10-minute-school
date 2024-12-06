@@ -1,6 +1,11 @@
 import React from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { CourseCarousel, CourseChecklist, DiscountTag } from "@app/components";
+import {
+  CourseCarousel,
+  CourseChecklist,
+  DiscountTag,
+  PrimaryButton,
+} from "@app/components";
 import { Button } from "@/components/ui/button";
 import { formatDate } from "@app/utils/format-date";
 
@@ -45,9 +50,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({
           {variantInfo?.name}
         </h3>
 
-        <Button className="my-4 w-full border-b-4 border-b-green-700 bg-green-500 p-5 font-bold hover:border-b-transparent hover:bg-green-600">
-          Enroll
-        </Button>
+        <PrimaryButton label="Enroll" />
 
         <p className="text-base text-orange-500">
           {`${courseEndInfo[0]?.values[0]?.text} ${formatDate(courseEndInfo[0]?.values[0]?.end_at)}`}

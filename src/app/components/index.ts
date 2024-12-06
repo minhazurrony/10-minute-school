@@ -7,3 +7,4 @@ export * from "./course-carousel";
 export * from "./course-checklist";
 export * from "./make-call";
 export * from "./discount-tag";
+export * from "./primary-button";
