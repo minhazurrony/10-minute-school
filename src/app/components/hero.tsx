@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { HeroChecklist, CountdownTimer } from "@app/components";
+import { HeroChecklist, CountdownTimer, CourseCard } from "@app/components";
 
 type HeroProps = {
   liveBatchData: any;
@@ -34,7 +34,7 @@ export const Hero: React.FC<HeroProps> = ({ liveBatchData, variantsData }) => {
         backgroundImage: `url(${backgroundUrl})`,
       }}
     >
-      <div className="container px-4 py-10">
+      <div className="container relative px-4 py-10">
         <div className="order-1 flex flex-1 flex-col justify-center gap-4 md:order-1 md:max-w-[calc(100%-348px)] lg:max-w-[calc(100%-448px)]">
           <Image
             src={media[0].resource_value}
@@ -67,6 +67,10 @@ export const Hero: React.FC<HeroProps> = ({ liveBatchData, variantsData }) => {
             <p className="mb-4 text-gray-400">{enrollmentNotice}</p>
             <CountdownTimer endAt={lastDateOf10thBatchEnrollment} />
           </div>
+        </div>
+
+        <div className="absolute right-0 order-2 w-full bg-white md:absolute md:top-[50px] md:max-w-[330px] lg:max-w-[400px]">
+          <CourseCard media={media} variantData={variantsData} />
         </div>
       </div>
     </div>
