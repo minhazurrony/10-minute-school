@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Getting Started:
 
-## Getting Started
+- clone this repo
+- go to project directory and run `npm install` to install all the dependencies
+- run `npm run dev` to start development server
+- open `http://localhost:3000` in browser to see the result
 
-First, run the development server:
+## Features:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [x] **Course Overview:** Title, description
+- [x] **SEO:** Title, description, default meta
+- [x] Variant checklist, variant offer (countdown)
+- [x] Multiple media trailers and media images
+- [x] Variant and plan (use variant API)
+- [x] Product checklist
+- [x] Demo Class book
+- [x] Instructors
+- [x] Features
+- [x] Pointers
+- [x] Routine
+- [x] Testimonials
+- [x] About
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Challenges:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Showing a section based on scroll. As I used next.js server component that's why it's not possible to apply Intersection Observer API or framer motion useInView hook. To make this working there need some refactoring but I didn't get enough time to do this.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Improvement areas:
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- UI could be more responsive but didn't get enough scope to do this.
+- Navigation links are sticky top position but it jumped on top position if any of the links is clicked without scrolling to it's sticky position.
+- Navigation links responsive behavior could be improved for smaller devices
+- I used TypeScript, few types could be more strict.

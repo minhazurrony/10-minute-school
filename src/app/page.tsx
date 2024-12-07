@@ -133,7 +133,10 @@ export default async function Home() {
           </div>
 
           {/* class routine section */}
-          <div id={classRoutine?.type} className="mb-12 scroll-mt-[150px]">
+          <div
+            id={classRoutine?.type}
+            className="mb-12 w-fit scroll-mt-[150px]"
+          >
             <div className="flex justify-between">
               <h2 className="mb-4 text-xl font-bold md:text-2xl">
                 {classRoutine?.name}
