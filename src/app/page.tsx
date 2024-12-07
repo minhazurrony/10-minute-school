@@ -1,6 +1,7 @@
 import { getLiveBatch, getVariants } from "@app/services";
 import {
   DemoClassBookButton,
+  Feature,
   Hero,
   Instructor,
   PrimaryButton,
@@ -20,6 +21,10 @@ export default async function Home() {
   const demoClassEngagement = liveBatchData?.data?.sections[0]?.values[0];
   const courseInstructors = liveBatchData?.data?.sections.find(
     (section: any) => section?.type === "instructors",
+  );
+
+  const features = liveBatchData?.data?.sections?.find(
+    (section: any) => section?.type === "features",
   );
 
   return (
@@ -73,17 +78,28 @@ export default async function Home() {
           </div>
 
           {/* Couse instructors */}
-          <div id={courseInstructors?.type}>
+          <div id={courseInstructors?.type} className="mb-12">
             <h2 className="mb-4 text-xl font-bold md:text-2xl">
               {courseInstructors?.name}
             </h2>
-            <div className="grid grid-cols-2 rounded border px-4">
+            <div className="grid grid-cols-1 rounded border px-4 md:grid-cols-2">
               {courseInstructors?.values?.map((person: any) => {
-                return <Instructor data={person} />;
+                return <Instructor key={person?.slug} data={person} />;
               })}
             </div>
           </div>
-          <div id="test3"></div>
+
+          {/* features section */}
+          <div id={features?.type} className="mb-12">
+            <h2 className="mb-4 text-xl font-bold md:text-2xl">
+              {features?.name}
+            </h2>
+            <div className="grid grid-cols-1 gap-4 rounded-md border bg-[#111827] p-6 md:grid-cols-2 md:gap-8">
+              {features?.values.map((feature: any) => {
+                return <Feature key={feature?.id} feature={feature} />;
+              })}
+            </div>
+          </div>
         </div>
       </div>
     </main>
