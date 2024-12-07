@@ -6,6 +6,7 @@ import {
   Instructor,
   SectionLinks,
   Pointer,
+  RoutineDownload,
 } from "@app/components";
 import Image from "next/image";
 
@@ -29,6 +30,10 @@ export default async function Home() {
 
   const pointers = liveBatchData?.data?.sections?.find(
     (section: any) => section?.type === "pointers",
+  );
+
+  const classRoutine = liveBatchData?.data?.sections?.find(
+    (section: any) => section?.type === "routine",
   );
 
   return (
@@ -115,6 +120,25 @@ export default async function Home() {
                 return <Pointer key={pointer?.id} pointer={pointer} />;
               })}
             </div>
+          </div>
+
+          {/* class routine */}
+          <div id={classRoutine?.type} className="mb-12">
+            <div className="flex justify-between">
+              <h2 className="mb-4 text-xl font-bold md:text-2xl">
+                {classRoutine?.name}
+              </h2>
+              <RoutineDownload
+                downloadLink={classRoutine?.values[0]?.download_link}
+              />
+            </div>
+
+            <div
+              className="w-full"
+              dangerouslySetInnerHTML={{
+                __html: classRoutine?.values[0]?.html,
+              }}
+            />
           </div>
         </div>
       </div>
