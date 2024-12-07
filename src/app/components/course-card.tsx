@@ -6,7 +6,6 @@ import {
   DiscountTag,
   PrimaryButton,
 } from "@app/components";
-import { Button } from "@/components/ui/button";
 import { formatDate } from "@app/utils/format-date";
 
 export type CourseCardProps = {

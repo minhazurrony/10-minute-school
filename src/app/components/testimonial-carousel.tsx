@@ -30,7 +30,7 @@ type Props = {
 
 export const TestimonialCarousel: React.FC<Props> = ({ data }) => {
   const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
+  const [, setCurrent] = useState(0);
   const [playingVideos, setPlayingVideos] = useState<Record<string, boolean>>(
     {},
   );
