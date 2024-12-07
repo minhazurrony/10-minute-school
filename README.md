@@ -5,6 +5,8 @@
 - run `npm run dev` to start development server
 - open `http://localhost:3000` in browser to see the result
 
+**Deployed Link:** [IELTS-live-batch](https://10-minute-school-one.vercel.app/)
+
 ## Features:
 
 - [x] **Course Overview:** Title, description
