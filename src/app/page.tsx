@@ -56,12 +56,12 @@ export default async function Home() {
           {/* Demo class section */}
           <div
             id="demo-class"
-            className="mb-12 mt-4 flex flex-col gap-4 overflow-hidden rounded-xl bg-cover bg-center bg-no-repeat p-4 md:mb-12 md:p-8"
+            className="mb-12 mt-4 flex flex-col gap-4 overflow-hidden rounded-xl bg-cover bg-center bg-no-repeat p-4 md:mb-12 md:p-8 xl:flex-row"
             style={{
               backgroundImage: `url(${demoClassEngagement?.background?.image})`,
             }}
           >
-            <div className="order-2 w-full flex-1 xl:w-1/2">
+            <div className="order-2 w-full flex-1 xl:order-1 xl:w-1/2">
               <Image
                 src={demoClassEngagement?.top_left_icon_img}
                 height={150}
