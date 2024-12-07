@@ -12,3 +12,4 @@ export * from "./section-links";
 export * from "./demo-class-book-button";
 export * from "./instructor";
 export * from "./feature";
+export * from "./pointer";

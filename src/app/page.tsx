@@ -4,8 +4,8 @@ import {
   Feature,
   Hero,
   Instructor,
-  PrimaryButton,
   SectionLinks,
+  Pointer,
 } from "@app/components";
 import Image from "next/image";
 
@@ -25,6 +25,10 @@ export default async function Home() {
 
   const features = liveBatchData?.data?.sections?.find(
     (section: any) => section?.type === "features",
+  );
+
+  const pointers = liveBatchData?.data?.sections?.find(
+    (section: any) => section?.type === "pointers",
   );
 
   return (
@@ -97,6 +101,18 @@ export default async function Home() {
             <div className="grid grid-cols-1 gap-4 rounded-md border bg-[#111827] p-6 md:grid-cols-2 md:gap-8">
               {features?.values.map((feature: any) => {
                 return <Feature key={feature?.id} feature={feature} />;
+              })}
+            </div>
+          </div>
+
+          {/* pointers section */}
+          <div id={pointers?.type} className="mb-12">
+            <h2 className="mb-4 text-xl font-bold md:text-2xl">
+              {pointers?.name}
+            </h2>
+            <div className="grid grid-cols-1 gap-4 rounded-md border p-6 md:grid-cols-2 md:gap-8">
+              {pointers?.values.map((pointer: any) => {
+                return <Pointer key={pointer?.id} pointer={pointer} />;
               })}
             </div>
           </div>
