@@ -109,8 +109,9 @@ export const TestimonialCarousel: React.FC<Props> = ({ data }) => {
           ))}
         </CarouselContent>
 
-        <CarouselPrevious className="rounded-full" />
-        <CarouselNext className="rounded-full" />
+        {/* Carousel Controls */}
+        <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2 transform rounded-full bg-white p-2 text-black shadow md:-left-12 md:p-3" />
+        <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2 transform rounded-full bg-white p-2 text-black shadow md:-right-12 md:p-3" />
       </Carousel>
     </div>
   );

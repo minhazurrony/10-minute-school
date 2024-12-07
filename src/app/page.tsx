@@ -97,7 +97,7 @@ export default async function Home() {
           </div>
 
           {/* Couse instructors */}
-          <div id={courseInstructors?.type} className="mb-12">
+          <div id={courseInstructors?.type} className="mb-12 scroll-mt-[150px]">
             <h2 className="mb-4 text-xl font-bold md:text-2xl">
               {courseInstructors?.name}
             </h2>
@@ -109,7 +109,7 @@ export default async function Home() {
           </div>
 
           {/* features section */}
-          <div id={features?.type} className="mb-12">
+          <div id={features?.type} className="mb-12 scroll-mt-[150px]">
             <h2 className="mb-4 text-xl font-bold md:text-2xl">
               {features?.name}
             </h2>
@@ -121,7 +121,7 @@ export default async function Home() {
           </div>
 
           {/* pointers section */}
-          <div id={pointers?.type} className="mb-12">
+          <div id={pointers?.type} className="mb-12 scroll-mt-[150px]">
             <h2 className="mb-4 text-xl font-bold md:text-2xl">
               {pointers?.name}
             </h2>
@@ -133,7 +133,7 @@ export default async function Home() {
           </div>
 
           {/* class routine section */}
-          <div id={classRoutine?.type} className="mb-12">
+          <div id={classRoutine?.type} className="mb-12 scroll-mt-[150px]">
             <div className="flex justify-between">
               <h2 className="mb-4 text-xl font-bold md:text-2xl">
                 {classRoutine?.name}
@@ -152,7 +152,7 @@ export default async function Home() {
           </div>
 
           {/* testimonials section */}
-          <div id={testimonials?.type} className="mb-12">
+          <div id={testimonials?.type} className="mb-12 scroll-mt-[150px]">
             <h2 className="mb-4 text-xl font-bold md:text-2xl">
               {testimonials?.name}
             </h2>
@@ -160,7 +160,7 @@ export default async function Home() {
           </div>
 
           {/* about section */}
-          <div id={about?.type} className="mb-12">
+          <div id={about?.type} className="mb-12 scroll-mt-[150px]">
             <h2 className="mb-4 text-xl font-bold md:text-2xl">
               {about?.name}
             </h2>

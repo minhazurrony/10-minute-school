@@ -24,24 +24,9 @@ type SectionLinksProps = {
   sections: Section[];
 };
 
-const itemsPerView = 5;
-
 export const SectionLinks: React.FC<SectionLinksProps> = ({ sections }) => {
-  const [startIndex, setStartIndex] = useState(0);
   const searchParams = useSearchParams();
   const [hash, setHash] = useState<string | null>(null);
-
-  const handleNext = () => {
-    if (startIndex + itemsPerView < sections.length) {
-      setStartIndex((prev) => prev + 1);
-    }
-  };
-
-  const handlePrevious = () => {
-    if (startIndex > 0) {
-      setStartIndex((prev) => prev - 1);
-    }
-  };
 
   useEffect(() => {
     // Extract hash from the URL
@@ -50,12 +35,11 @@ export const SectionLinks: React.FC<SectionLinksProps> = ({ sections }) => {
   }, [searchParams]);
 
   return (
-    <div className="relative mx-auto max-w-full">
+    <div className="sticky top-[64px] z-50 mx-auto hidden max-w-full bg-white py-4 lg:block">
       <Carousel>
-        <CarouselContent className="flex border-b">
-          {sections
-            .slice(startIndex, startIndex + itemsPerView)
-            .map((section, index) => (
+        <CarouselContent className="border-b">
+          {sections?.map((section: any, index) => {
+            return (
               <CarouselItem key={index} className="basis-auto px-4 text-center">
                 <Link
                   href={`#${section?.type}`}
@@ -68,27 +52,14 @@ export const SectionLinks: React.FC<SectionLinksProps> = ({ sections }) => {
                   {section.name}
                 </Link>
               </CarouselItem>
-            ))}
+            );
+          })}
         </CarouselContent>
 
         {/* Carousel Controls */}
         <div className="mt-2 flex justify-between">
-          <CarouselPrevious
-            onClick={handlePrevious}
-            disabled={startIndex === 0}
-            className={`${
-              startIndex === 0 ? "cursor-not-allowed opacity-50" : ""
-            }`}
-          />
-          <CarouselNext
-            onClick={handleNext}
-            disabled={startIndex + itemsPerView >= sections.length}
-            className={`${
-              startIndex + itemsPerView >= sections.length
-                ? "cursor-not-allowed opacity-50"
-                : ""
-            }`}
-          />
+          <CarouselPrevious />
+          <CarouselNext />
         </div>
       </Carousel>
     </div>
