@@ -66,13 +66,13 @@ export const Hero: React.FC<HeroProps> = ({ liveBatchData, variantsData }) => {
             })}
           </div>
 
-          <div>
+          <div className="mb-8">
             <p className="mb-4 text-gray-400">{enrollmentNotice}</p>
             <CountdownTimer endAt={lastDateOf10thBatchEnrollment} />
           </div>
         </div>
 
-        <div className="absolute right-0 order-2 w-full bg-white md:absolute md:top-[50px] md:max-w-[330px] lg:max-w-[400px]">
+        <div className="order-2 w-full bg-white md:absolute md:right-0 md:top-[50px] md:max-w-[330px] lg:max-w-[400px]">
           <CourseCard
             media={media}
             variantData={variantsData}

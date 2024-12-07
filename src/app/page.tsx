@@ -56,12 +56,12 @@ export default async function Home() {
           {/* Demo class section */}
           <div
             id="demo-class"
-            className="mb-12 mt-4 flex gap-4 overflow-hidden rounded-xl bg-center bg-no-repeat p-4 md:mb-12 md:p-8"
+            className="mb-12 mt-4 flex flex-col gap-4 overflow-hidden rounded-xl bg-cover bg-center bg-no-repeat p-4 md:mb-12 md:p-8"
             style={{
               backgroundImage: `url(${demoClassEngagement?.background?.image})`,
             }}
           >
-            <div className="w-full md:w-1/2">
+            <div className="order-2 w-full flex-1 xl:w-1/2">
               <Image
                 src={demoClassEngagement?.top_left_icon_img}
                 height={150}
@@ -85,7 +85,7 @@ export default async function Home() {
                 <DemoClassBookButton cta={demoClassEngagement?.cta} />
               </div>
             </div>
-            <div className="hidden w-1/2 items-center md:flex">
+            <div className="order-1 w-full flex-1 items-center lg:flex xl:w-1/2">
               <Image
                 src={demoClassEngagement?.thumbnail}
                 height={200}
@@ -101,7 +101,7 @@ export default async function Home() {
             <h2 className="mb-4 text-xl font-bold md:text-2xl">
               {courseInstructors?.name}
             </h2>
-            <div className="grid grid-cols-1 rounded border px-4 md:grid-cols-2">
+            <div className="grid grid-cols-1 rounded border px-4 lg:grid-cols-2">
               {courseInstructors?.values?.map((person: any) => {
                 return <Instructor key={person?.slug} data={person} />;
               })}
@@ -113,7 +113,7 @@ export default async function Home() {
             <h2 className="mb-4 text-xl font-bold md:text-2xl">
               {features?.name}
             </h2>
-            <div className="grid grid-cols-1 gap-4 rounded-md border bg-[#111827] p-6 md:grid-cols-2 md:gap-8">
+            <div className="grid grid-cols-1 gap-4 rounded-md border bg-[#111827] p-6 lg:grid-cols-2 lg:gap-8">
               {features?.values.map((feature: any) => {
                 return <Feature key={feature?.id} feature={feature} />;
               })}
@@ -125,7 +125,7 @@ export default async function Home() {
             <h2 className="mb-4 text-xl font-bold md:text-2xl">
               {pointers?.name}
             </h2>
-            <div className="grid grid-cols-1 gap-4 rounded-md border p-6 md:grid-cols-2 md:gap-8">
+            <div className="grid grid-cols-1 gap-4 rounded-md border p-6 lg:grid-cols-2 lg:gap-8">
               {pointers?.values.map((pointer: any) => {
                 return <Pointer key={pointer?.id} pointer={pointer} />;
               })}

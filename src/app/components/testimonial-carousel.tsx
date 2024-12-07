@@ -54,7 +54,7 @@ export const TestimonialCarousel: React.FC<Props> = ({ data }) => {
       <Carousel setApi={setApi} className="w-full">
         <CarouselContent>
           {data.map((item) => (
-            <CarouselItem key={item.id} className="md:basis-1/2">
+            <CarouselItem key={item.id} className="lg:basis-1/2">
               <Card className="w-full">
                 <CardContent className="aspect-[16/9] p-6">
                   <div className="relative">
@@ -110,8 +110,8 @@ export const TestimonialCarousel: React.FC<Props> = ({ data }) => {
         </CarouselContent>
 
         {/* Carousel Controls */}
-        <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2 transform rounded-full bg-white p-2 text-black shadow md:-left-12 md:p-3" />
-        <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2 transform rounded-full bg-white p-2 text-black shadow md:-right-12 md:p-3" />
+        <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2 transform rounded-full bg-white p-2 text-black shadow xl:-left-12 xl:p-3" />
+        <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2 transform rounded-full bg-white p-2 text-black shadow xl:-right-12 xl:p-3" />
       </Carousel>
     </div>
   );

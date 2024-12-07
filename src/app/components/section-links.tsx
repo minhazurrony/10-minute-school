@@ -35,7 +35,7 @@ export const SectionLinks: React.FC<SectionLinksProps> = ({ sections }) => {
   }, [searchParams]);
 
   return (
-    <div className="sticky top-[64px] z-50 mx-auto hidden max-w-full bg-white py-4 lg:block">
+    <div className="sticky top-[64px] z-50 mx-auto hidden max-w-full bg-white py-4 xl:block">
       <Carousel>
         <CarouselContent className="border-b">
           {sections?.map((section: any, index) => {
