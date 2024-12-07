@@ -49,8 +49,9 @@ export const CourseCard: React.FC<CourseCardProps> = ({
         <h3 className="text-xs font-normal text-gray-500 md:text-base">
           {variantInfo?.name}
         </h3>
-
-        <PrimaryButton label="Enroll" />
+        <div className="my-4">
+          <PrimaryButton label="Enroll" />
+        </div>
 
         <p className="text-base text-orange-500">
           {`${courseEndInfo[0]?.values[0]?.text} ${formatDate(courseEndInfo[0]?.values[0]?.end_at)}`}
