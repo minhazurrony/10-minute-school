@@ -7,6 +7,7 @@ import {
   SectionLinks,
   Pointer,
   RoutineDownload,
+  TestimonialCarousel,
 } from "@app/components";
 import Image from "next/image";
 
@@ -34,6 +35,10 @@ export default async function Home() {
 
   const classRoutine = liveBatchData?.data?.sections?.find(
     (section: any) => section?.type === "routine",
+  );
+
+  const testimonials = liveBatchData?.data?.sections?.find(
+    (section: any) => section?.type === "testimonials",
   );
 
   return (
@@ -122,7 +127,7 @@ export default async function Home() {
             </div>
           </div>
 
-          {/* class routine */}
+          {/* class routine section */}
           <div id={classRoutine?.type} className="mb-12">
             <div className="flex justify-between">
               <h2 className="mb-4 text-xl font-bold md:text-2xl">
@@ -139,6 +144,14 @@ export default async function Home() {
                 __html: classRoutine?.values[0]?.html,
               }}
             />
+          </div>
+
+          {/* testimonials section */}
+          <div id={testimonials?.type} className="mb-12">
+            <h2 className="mb-4 text-xl font-bold md:text-2xl">
+              {testimonials?.name}
+            </h2>
+            <TestimonialCarousel data={testimonials?.values} />
           </div>
         </div>
       </div>
