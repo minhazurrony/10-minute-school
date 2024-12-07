@@ -15,3 +15,4 @@ export * from "./feature";
 export * from "./pointer";
 export * from "./routine-download";
 export * from "./testimonial-carousel";
+export * from "./custom-accordion";

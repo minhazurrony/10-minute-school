@@ -8,6 +8,7 @@ import {
   Pointer,
   RoutineDownload,
   TestimonialCarousel,
+  CustomAccordion,
 } from "@app/components";
 import Image from "next/image";
 
@@ -39,6 +40,10 @@ export default async function Home() {
 
   const testimonials = liveBatchData?.data?.sections?.find(
     (section: any) => section?.type === "testimonials",
+  );
+
+  const about = liveBatchData?.data?.sections?.find(
+    (section: any) => section?.type === "about",
   );
 
   return (
@@ -152,6 +157,14 @@ export default async function Home() {
               {testimonials?.name}
             </h2>
             <TestimonialCarousel data={testimonials?.values} />
+          </div>
+
+          {/* about section */}
+          <div id={about?.type} className="mb-12">
+            <h2 className="mb-4 text-xl font-bold md:text-2xl">
+              {about?.name}
+            </h2>
+            <CustomAccordion data={about?.values} />
           </div>
         </div>
       </div>
