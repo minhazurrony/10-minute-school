@@ -10,3 +10,4 @@ export * from "./discount-tag";
 export * from "./primary-button";
 export * from "./section-links";
 export * from "./demo-class-book-button";
+export * from "./instructor";

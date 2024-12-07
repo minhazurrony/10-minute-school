@@ -17,7 +17,6 @@ type VariantsChecklist = {
 
 export const Hero: React.FC<HeroProps> = ({ liveBatchData, variantsData }) => {
   const backgroundUrl = HERO_BG_IMAGE;
-  // liveBatchData?.data?.sections[0]?.values[0]?.background?.image;
   const title = liveBatchData?.data?.title;
   const description = liveBatchData?.data?.description;
   const media = liveBatchData?.data?.media;

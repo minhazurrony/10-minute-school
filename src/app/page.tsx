@@ -2,6 +2,7 @@ import { getLiveBatch, getVariants } from "@app/services";
 import {
   DemoClassBookButton,
   Hero,
+  Instructor,
   PrimaryButton,
   SectionLinks,
 } from "@app/components";
@@ -17,6 +18,9 @@ export default async function Home() {
   const variantsData = await getVariants();
 
   const demoClassEngagement = liveBatchData?.data?.sections[0]?.values[0];
+  const courseInstructors = liveBatchData?.data?.sections.find(
+    (section: any) => section?.type === "instructors",
+  );
 
   return (
     <main>
@@ -28,7 +32,7 @@ export default async function Home() {
           {/* Demo class section */}
           <div
             id="demo-class"
-            className="mb-8 mt-4 flex gap-4 overflow-hidden rounded-xl bg-center bg-no-repeat p-4 md:mb-12 md:p-8"
+            className="mb-12 mt-4 flex gap-4 overflow-hidden rounded-xl bg-center bg-no-repeat p-4 md:mb-12 md:p-8"
             style={{
               backgroundImage: `url(${demoClassEngagement?.background?.image})`,
             }}
@@ -67,7 +71,18 @@ export default async function Home() {
               />
             </div>
           </div>
-          <div id="test2"></div>
+
+          {/* Couse instructors */}
+          <div id={courseInstructors?.type}>
+            <h2 className="mb-4 text-xl font-bold md:text-2xl">
+              {courseInstructors?.name}
+            </h2>
+            <div className="grid grid-cols-2 rounded border px-4">
+              {courseInstructors?.values?.map((person: any) => {
+                return <Instructor data={person} />;
+              })}
+            </div>
+          </div>
           <div id="test3"></div>
         </div>
       </div>
